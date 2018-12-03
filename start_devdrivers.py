@@ -1,6 +1,7 @@
 import os
 import time
 import configparser
+import sys
 
 def getTasks(name):
 	r = os.popen('tasklist /v').read().strip().split('\n')
@@ -18,7 +19,7 @@ if __name__ == '__main__':
 	'''
 
 	config = configparser.ConfigParser()
-	config.read('device_config.ini')
+	config.read('C:\\analyzer-ts\\device_config.ini')
 	
 	#imgNames = {'test.exe','hello1.exe','hello2.exe','hello3.exe'}
 	imgNames = { config['DEVDRIVER']['driver1'],
@@ -35,7 +36,7 @@ if __name__ == '__main__':
 		print("name[%s]" % imgName)
 		if not r:
 			print('%s - No such process' % (imgName))
-			os.system('start "%s" %s\dir\\%s\\%s' % (imgName,basedir,imgName[:-4],imgName))
+			os.system('start "%s" %s\dist\\%s\\%s' % (imgName,basedir,imgName[:-4],imgName))
 			print('%s is Started' % (imgName))
 
 		elif 'Not Responding' in r:

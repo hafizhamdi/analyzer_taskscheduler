@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['stop_devdrivers.py'],
-             pathex=['E:\\github\\lppkn\\python_scripts\\patch_taskscheduler'],
+             pathex=['E:\\github\\lppkn\\python_scripts\\analyzer_taskscheduler'],
              binaries=[],
              datas=[],
              hiddenimports=[],
